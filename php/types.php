@@ -17,11 +17,11 @@ class Types {
         ],
 
         "WINDOWS|GUI" => [
-            'press("LEFT_GUI");'
+            'press("LEFT_GUI{space}{val}");'
         ],
 
         'MENU|APP|SHIFT|ALT|CONTROL|CTRL' => [
-            'press("{val}");',
+            'press("{arg}{space}{val}");',
             'regex' => '/[^A-Za-z]/'
         ],
 

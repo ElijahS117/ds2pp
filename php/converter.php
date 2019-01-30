@@ -46,7 +46,7 @@ class Converter {
             $val = "";
     
             // Val
-            if(strpos($line, ' ') !== 0) {
+            if(\strpos($line, ' ') !== false) {
                 $arg = explode(' ', $line)[0];
                 $val = ltrim(substr($line, strpos($line, ' ')));
             }
@@ -144,6 +144,12 @@ class Converter {
             foreach(explode('|', $foundIndex) as $splitted) {
                 $i++;
                 $str = str_replace('{arg|'.$i.'}', $splitted, $str);
+            }
+
+            if(strlen($val) > 0) {
+                $str = str_replace('{space}', ' ', $str);
+            } else {
+                $str = str_replace('{space}', '', $str);
             }
 
             array_push($result['output'], $str);
