@@ -16,25 +16,29 @@ class Types {
             'type("{val}");'
         ],
 
-        'WINDOWS|GUI|MENU|APP|SHIFT|ALT|CONTROL|CNTRL' => [
-            'press("{val}")',
-            'regex' => '/[^A-Z]/'
+        "WINDOWS|GUI" => [
+            'press("LEFT_GUI");'
         ],
 
-        'DOWNARROW|DOWN' => [
-            'press("{arg|2}");'
+        'MENU|APP|SHIFT|ALT|CONTROL|CTRL' => [
+            'press("{val}");',
+            'regex' => '/[^A-Za-z]/'
         ],
 
-        'LEFTARROW|LEFT' => [
-            'press("{arg|2}");'
+        'DOWNARROW|DOWN|DOWN_ARROW' => [
+            'press("DOWN_ARROW");'
         ],
 
-        'RIGHTARROW|RIGHT' => [
-            'press("{arg|2}");'
+        'LEFTARROW|LEFT|LEFT_ARROW' => [
+            'press("LEFT_ARROW");'
         ],
 
-        'UPARROW|UP' => [
-            'press("{arg|2}");'
+        'RIGHTARROW|RIGHT|RIGHT_ARROW' => [
+            'press("RIGHT_ARROW");'
+        ],
+
+        'UPARROW|UP|UP_ARROW' => [
+            'press("UP_ARROW");'
         ],
 
         'ENTER' => [
