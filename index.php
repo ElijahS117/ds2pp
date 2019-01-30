@@ -22,10 +22,6 @@
  *       MM
  */
 
-$o = file_get_contents("c.c");
-$o++;
-file_put_contents("c.c", $o);
-
 require 'php/converter.php';
 require 'php/types.php';
 
