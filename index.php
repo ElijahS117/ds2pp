@@ -42,6 +42,10 @@ $output = '';
 if($input !== false) {
     $result = $converter->convert($input, false, $types->getTypes(), false);
     
+    if(isset($_POST['layout'])) {
+        $output .= '// Layout: ' . $_POST['layout']. "\n" . 'layout("'.$_POST['layout'].'");' . "\n\n";
+    }
+
     foreach($result['output'] as $o) {
         $output .= "$o\n";
     }
@@ -55,7 +59,8 @@ $vars = [
     'output' => $output,
     'input' => isset($_POST['input']) ? $_POST['input'] : '',
     'error_msg' => $result['error']['err'] === 1 ? $result['error']['msg'] : '',
-    'execution_time' => $result['time']
+    'execution_time' => $result['time'],
+    'layout' => isset($_POST['layout']) ? $_POST['layout'] : ''
 ];
 
 $page_lines = explode("\n", $page_content);
